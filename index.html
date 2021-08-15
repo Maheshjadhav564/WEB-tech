@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body {
+            margin: 60px;
+            padding: 0%;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+
+        .heading {
+            text-align: center;
+            text-underline-position: auto;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        .text-center {
+            align-items: center;
+            justify-items: center;
+            align-content: center;
+        }
+
+        .justify-content-center {
+            -ms-flex-pack: center !important;
+            justify-content: center !important;
+        }
+
+        sup {
+            color: red;
+        }
+
+        .text-danger {
+            color: red;
+        }
+
+        .input {
+            height: 40px;
+            width: 100%;
+            font-family: emoji;
+            font-size: 20px;
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .textarea {
+            height: 100px;
+            width: 100%;
+            font-family: emoji;
+            font-size: 20px;
+            margin: 10px;
+            padding: 5px;
+            border: 2px solid gray;
+            border-radius: 5px;
+        }
+
+        .select {
+            height: 40px;
+            font-family: emoji;
+            font-size: 20px;
+            margin: 10px;
+            padding: 5px;
+            background-color: lightgray;
+            border: 2px solid gray;
+            border-radius: 5px;
+        }
+
+        .fee-label {
+            text-decoration: underline;
+            padding: 5px;
+            margin-bottom: 0;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .label {
+            padding: 5px;
+            margin-bottom: 0;
+            font-size: 20px;
+            line-height: 1.5
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+
+        .col {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+
+        .col-md-12 {
+            width: 100%;
+        }
+
+        .col-md-11 {
+            width: 91.66666667%;
+        }
+
+        .col-md-10 {
+            width: 83.33333333%;
+        }
+
+        .col-md-9 {
+            width: 75%;
+        }
+
+        .col-md-8 {
+            width: 66.66666667%;
+        }
+
+        .col-md-7 {
+            width: 58.33333333%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-5 {
+            width: 41.66666667%;
+        }
+
+        .col-md-4 {
+            width: 33.33333333%;
+        }
+
+        .col-md-3 {
+            width: 25%;
+        }
+
+        .col-md-2 {
+            width: 16.66666667%;
+        }
+
+        .col-md-1 {
+            width: 8.33333333%;
+        }
+
+        /* margin classes */
+        .m-0 {
+            margin: 0 !important;
+        }
+
+        .mt-0 {
+            margin-top: 0 !important;
+        }
+
+        .mr-0 {
+            margin-right: 0 !important;
+        }
+
+        .mb-0 {
+            margin-bottom: 0 !important;
+        }
+
+        .ml-0 {
+            margin-left: 0 !important;
+        }
+
+        .m-1 {
+            margin: 0.25rem !important;
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem !important;
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem !important;
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem !important;
+        }
+
+        .ml-1 {
+            margin-left: 0.25rem !important;
+        }
+
+        .m-2 {
+            margin: 0.5rem !important;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem !important;
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem !important;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem !important;
+        }
+
+        .ml-2 {
+            margin-left: 0.5rem !important;
+        }
+
+        .m-3 {
+            margin: 1rem !important;
+        }
+
+        .mt-3 {
+            margin-top: 1rem !important;
+        }
+
+        .mr-3 {
+            margin-right: 1rem !important;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .ml-3 {
+            margin-left: 1rem !important;
+        }
+
+        .m-4 {
+            margin: 1.5rem !important;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mr-4 {
+            margin-right: 1.5rem !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .ml-4 {
+            margin-left: 1.5rem !important;
+        }
+
+        .m-5 {
+            margin: 3rem !important;
+        }
+
+        .mt-5,
+        .my-5 {
+            margin-top: 3rem !important;
+        }
+
+        .mr-5 {
+            margin-right: 3rem !important;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        .ml-5 {
+            margin-left: 3rem !important;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+        }
+
+        .btn-block {
+            display: block;
+            width: 90%;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff
+        }
+
+        .btn-warning {
+            color: #212529;
+            background-color: #ffc107;
+            border-color: #ffc107
+        }
+
+        .btn-danger {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745
+        }
+
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 15px;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1.1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        table {
+            border-collapse: collapse
+        }
+
+        th {
+            text-align: inherit;
+            font-size: 18px;
+        }
+
+        thead {
+            display: table-header-group
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent
+        }
+
+        .table td,
+        .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border: 2px solid #dee2e6;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border: 2px solid #dee2e6;
+        }
+
+        .table thead td {
+            vertical-align: bottom;
+            border: 2px solid #dee2e6;
+        }
+
+        .table tbody+tbody {
+            border-top: 2px solid #dee2e6;
+        }
+
+        .table .table {
+            background-color: #fff
+        }
+
+        .table-sm td,
+        .table-sm th {
+            padding: .3rem
+        }
+
+        .table-bordered {
+            border: 1px solid #dee2e6
+        }
+
+        .table-bordered td {
+            border: 1px solid #dee2e6
+        }
+
+        .table-bordered th {
+            border: 1px solid #dee2e6
+        }
+
+        .table-bordered thead td {
+            border-bottom-width: 1px
+        }
+
+        .table-bordered thead th {
+            border-bottom-width: 1px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="justify-content-center mt-4">
+            <h3 class="heading">Application for the post of project Engineer </h3>
+        </div>
+
+        <form class="ml-3 mr-3 mt-3 mb-4">
+            <div class="mb-4 row">
+                <label class="label col-md-3"><b>Postion Code (select one): </b><sup class="text-danger">*</sup></label>
+                <select class="select col-md-3">
+                    <option value="000">select</option>
+                    <option value="001">1</option>
+                    <option value="002">2</option>
+                    <option value="003">3</option>
+                    <option value="004">4</option>
+                    <option value="005">5</option>
+                </select>
+            </div>
+            <hr />
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="mb-4 row">
+                        <label class="label col-md-2">Name:<sup class="text-danger">*</sup></label>
+                        <input class="input col-md-9" type="text" name="name" required placeholder="enter name"><br>
+                    </div>
+                    <div class="mb-4 row">
+                        <label class="label col-md-2">Father's name:<sup class="text-danger">*</sup></label>
+                        <input class="input col-md-9" type="text" name="fname" required
+                            placeholder="enter father's name"><br>
+                    </div>
+                    <div class="mb-4 row">
+                        <div class="col-md-8">
+                            <label class="label col-md-1">Date of birth:<sup class="text-danger">*</sup></label>
+                            <input class="input col-md-8" type="date" name="dob" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="label col-md-1 ">Age:</label>
+                            <input class="input col-md-7" type="text" name="age">
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <label class="label col-md-2">Gender:<sup class="text-danger">*</sup></label>
+                        <select class="select col-md-9" name="gender">
+                            <option value="male">Male </option>
+                            <option value="female">Memale</option>
+                            <option value="NOT KNOWM">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 row">
+                        <label class="label col-md-2">Nationality:<sup class="text-danger">*</sup></label>
+                        <input class="input col-md-9" type="text" name="nationality" required
+                            placeholder="Enter Nationality"> <br>
+                    </div>
+                    <div class="mb-4 row">
+                        <label class="label col-md-2">Marital Status:<sup class="text-danger">*</sup></label>
+                        <select class="select col-md-9" name="marital status">
+                            <option value="select">select</option>
+                            <option value="married">Married</option>
+                            <option value="Unmarried">Unmarried</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label class="label col-md-3">Wheter belong to (select one):<sup
+                                class="text-danger">*</sup></label>
+                        <input class="ml-3 mt-3" type="radio" name="category"> <label class="ml-3 mt-3">SC</label>
+                        <input class="ml-3 mt-3" type="radio" name="category"><label class="ml-3 mt-3">ST</label>
+                        <input class="ml-3 mt-3" type="radio" name="category"><label class="ml-3 mt-3">OBC</label>
+                        <input class="ml-3 mt-3" type="radio" name="category"><label class="ml-3 mt-3">PWD</label>
+                        <input class="ml-3 mt-3" type="radio" name="category"><label class="ml-3 mt-3">General</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <label class="label col-md-3">Upload photo:<sup class="text-danger">*</sup></label>
+                    </div>
+                    <div class="row">
+                        <div class="card" style="width: 200px;height: 250px;">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <input class="mt-2" type="file" name="photo" accept="image/*"><br>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <div class="row mr-2 ml-2 mt-2">
+                <div class="col-md-8">
+                    <label class="label col-md-6 ">Proof of Identity:<sup class="text-danger">*</sup></label>
+                    <select class="select col-md-8" name="Identity">
+                        <option value="Aadhar">Aadhar Number</option>
+                        <option value="PAN">PAN</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input class="input" type="number" name="ICARD NO" required
+                        placeholder="write your Aadhar number"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <label class="label col-md-4 ">Address for correspondence:<sup
+                                class="text-danger">*</sup></label>
+                        <div class="col-md-7">
+                            <textarea class="textarea" name="address" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="label ml-1">Select State:<sup class="text-danger">*</sup></label>
+                            <div class="col-md-10">
+                                <input class="input" type="text" name="state">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="label ml-1">Select City/Town:<sup class="text-danger">*</sup> </label>
+                            <div class="col-md-10">
+                                <input class="input" type="text" name="city"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <label class="label ml-1 mr-2">Pin code:</label>
+                        <div class="col-md-9">
+                            <input class="input ml-4" type="number" name="pincode">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row mt-2">
+                        <p>Phone Numbrs(with STD Codes):</p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <Label class="label col-md-11 ml-1">Office:</Label>
+                            <div class="col-md-11 ">
+                                <input class="input  " type="number" name="office">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="label col-md-11 ml-1">Home:</label>
+                            <div class="col-md-11 ">
+                                <input class="input " type="number" name="home">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="label col-md-11 ml-1">Mobile:<sup class="text-danger">*</sup></label>
+                            <div class="col-md-11 ">
+                                <input class="input " type="number" name="number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 ">
+                        <div class="row mt-2">
+                            <label class="label col-md-5 ">Pimary Email:<sup class="text-danger">*</sup></label>
+                            <div class="col-md-7 ">
+                                <input class="input ml-5" type="email" name="email"><br>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label class="label col-md-5 ">Secondary Email:<sup class="text-danger">*</sup></label>
+                            <div class="col-md-7 ">
+                                <input class="ml-5 input" type="email" name="semail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row mt-2">
+                <label class="label col-md-6">Are you currently working with C-DAC?<sup class="text-danger">*</sup>
+                </label>
+                <!-- <div class="col-md-7"> -->
+                <select class="select col-md-4" name="answer">
+                    <option>select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <!-- </div> -->
+            </div>
+
+            <div class="row mt-2">
+                <label class="label col-md-6"><b>12. Are you employed in any Govt./ Semi-Govt./ PSU/
+                        Autonomous Bodies?</b><sup class="text-danger">*</sup> </label>
+                <!-- <div class="col-md-7"> -->
+                <select class="select col-md-4" name="answer">
+                    <option value="Govt">GOVT</option>
+                    <option value="semi-Govt">Semi_Govt</option>
+                    <option value="PSU">PSU</option>
+                    <option value="Autonomus Bodies">Autnomus Bodies</option>
+                </select>
+                <!-- </div> -->
+            </div>
+            <p class="ml-2">If <b>"Yes"</b> the application should be forwarded through proper channel or NOC to be
+                produced
+                at the time of
+                Interview</p>
+            <div class="row mt-2 mb-2">
+                <label class="label col-md-6"><b>13. Have you ever been interviewed for recruitment in any post in C-DAC
+                        earlier?</b><sup class="text-danger">*</sup> </label>
+                <select class="select col-md-4" name="pre_post">
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select>
+            </div>
+            <hr />
+            <div class="mt-3 mb-4">
+                <label class="label"><b>14. Academic & Professional Qualifications (Begin with latest Graduation/ PG/ PG
+                        Diploma (if any)/ PhD)</b></label>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Qualification </th>
+                        <th>Name of Institute/ Board/ University * </th>
+                        <th>Specialization *</th>
+                        <th>Year of<br>Passing * </th>
+                        <th>% Marks(Aggregate)* </th>
+                        <th>Class/Division/Rank/ Distinction </th>
+                        <th><button class="btn btn-primary">Add Row</button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><select class="select" type="text">
+                                <option>Select</option>
+                            </select> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><button class="btn btn-danger mt-2">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-3 mb-4">
+                <label class="label"><b>15. Work Experience (Latest First) </b></label>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name of the Organization </th>
+                        <th>Designation & Grade </th>
+                        <th>Total Salary Drawn</th>
+                        <th>From(Mon-YYYY) </th>
+                        <th>To (Mon-YYYY) </th>
+                        <th>Nature of Work relevant for applied job</th>
+                        <th>Add rows</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><input class="input" type="text"> </td>
+                        <td>
+                            <select class="select col-md-4" type="text">
+                                <option>Select</option>
+                            </select>
+                            <input class="input col-md-4" type="text" />
+                        </td>
+                        <td>
+                            <select class="select col-md-4" type="text">
+                                <option>Select</option>
+                            </select>
+                            <input class="input col-md-4" type="text" />
+                        </td>
+                        <td><input class="input" type="text"> </td>
+                        <td><button class="btn btn-primary mt-2">Add Row</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <div class="row mr-3 mt-4">
+                <label class="label col-md-6">
+                    <b>16.Any Short Term Certificate courses/ Training Undergone</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="training"></textarea>
+                    <p class="ml-2"> If so, list the details.</p>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <label class="label col-md-6">
+                    <b>17. GATE/ UGC-CSIR Examination etc. Qualified, if any</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="gate/ugc"></textarea>
+                    <p class="ml-2"> (Discipline/ Branch, Year of Passing, %)</p>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <div class="col">
+                    <div class="row ">
+                        <label class="label col-md-6">
+                            <b>18. a) P.G (M.E/ M. Tech) Project Title</b>
+                        </label>
+                        <div class="col-md-6">
+                            <input class="input" type="text" name="PG_PROJECT">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 mt-4">
+                            <label class="label ml-5">
+                                <b>b) P.G Project Synopsis/ Abstract (Max. 250 Words)</b>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea class="textarea" type="text" name="PG_PROJECT"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mr-3">
+                <div class="col">
+                    <div class="row ">
+                        <label class="label col-md-6">
+                            <b>19. a) Ph.D Thesis Title</b>
+                        </label>
+                        <div class="col-md-6">
+                            <input class="input" type="text" name="PG_PROJECT">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 mt-4">
+                            <label class="label ml-5">
+                                <b>b) Ph.D Thesis Synopsis/ Abstract (Max. 250 Words)</b>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea class="textarea" type="text" name="PG_PROJECT"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <label class="label col-md-6">
+                    <b>20. Workshops/ Seminars/ Conferences attended</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="workshops"></textarea>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <label class="label col-md-6">
+                    <b>21. Papers published/ presented / Technical talks delivered</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="papers"></textarea>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <label class="label col-md-6">
+                    <b>22. Any additional info that may not have been covered</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="aditionalinfo"></textarea>
+                </div>
+            </div>
+            <div class="row mr-3">
+                <label class="label col-md-6">
+                    <b>23. References (Name, Occupation, Addr, Email, Mobile#)</b>
+                </label>
+                <div class="col-md-6">
+                    <textarea class="textarea" type="text" name="refrences"></textarea>
+                    <p class="ml-2">(at least 2 references)</p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <div class="mb-4">
+                <div class="mt-4">
+                    <label class="label mt-4">Application Fees Details</label>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col-md-8 mr-5 ml-5">
+                            <div class="card mt-4">
+                                <div class="row">
+                                    <label class="fee-label col-md-5"><b>Mode of Payment</b></label>
+                                    <div class="col-md-6">
+                                        <input class="input" type="text" name="PG_PROJECT">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fee-label col-md-5"><b>Bank and Branch
+                                        </b></label>
+                                    <div class="col-md-6">
+                                        <input class="input" type="text" name="PG_PROJECT">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fee-label col-md-5"><b>Transaction Id</b></label>
+                                    <div class="col-md-6">
+                                        <input class="input" type="text" name="PG_PROJECT">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fee-label col-md-5"><b>Transaction Date</b></label>
+                                    <div class="col-md-6">
+                                        <input class="input" type="text" name="PG_PROJECT">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ml-4">
+                            <div class="row">
+                                <label class="label col-md-3">Upload proof of payment:<sup
+                                        class="text-danger">*</sup></label>
+                            </div>
+                            <div class="row">
+                                <div class="card" style="width: 200px;height: 250px;">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <input class="mt-2" type="file" name="photo" accept="image/*"><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="mt-4 row">
+                <label class="label"><b>Upload your CV</b> File name: [yourname_CV.pdf]<sup
+                        class="text-danger">*</sup></label>
+            </div>
+            <div class="row mt-2 mb-2">
+                <input type="file" name="Resume" accept=".pdf"><br>
+            </div>
+            <div class="mt-2">
+                <h3>DECLARATION</h3>
+                <div class="row mt-3">
+                    <h3> 1. I certify that all information provided in this application is true, complete and correct to
+                        the best of my knowledge and belief.</h3>
+                </div>
+                <div class="row mt-3 ml-3">
+                    <h3> I understand that any false information or omission of information may disqualify me from
+                        consideration for employment
+                        and may result in dismissal from the job, if discovered at a later date.
+                    </h3>
+                </div>
+                <div class="row mt-4">
+                    <h3> 2. I have read and understood the above declaration before signing this.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <label class="label col-md-5">Place<sup class="text-danger">*</sup></label>
+                        <div class="col-md-6">
+                            <input class="input" type="text" name="place">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <label class="label col-md-6">Date<sup class="text-danger">*</sup></label>
+                            <div class="col-md-6">
+                                <input class="input" type="datetime-local" name="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input class="mt-3" type="checkbox" value="dsdsd" id="dsdsd">
+                <label class="label mt-1" for="dsdsd">I accept the Terms and Conditions
+                </label>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button class="btn btn-success btn-block">SUBMIT FORM </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-block">SUBMIT FORM </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-warning btn-block">SUBMIT FORM </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-danger btn-block">SUBMIT FORM </button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <p>
+                    © 2020 C-DAC. All rights reserved Website owned & maintained by: Centre for Development of Advanced
+                    Computing (C-DAC)
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
